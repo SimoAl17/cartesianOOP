@@ -22,3 +22,5 @@ console.log(point1.distanceFromOrigin());
 console.log(point1.medianPointFromPoint(point2));
 console.log(point1.nearestPoint(point3, point2, point4, point5));
 
+const segment1 = new Segment(point1, point2);
+console.log(segment1.length());
