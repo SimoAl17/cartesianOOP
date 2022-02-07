@@ -22,3 +22,54 @@ class Rectangle{
         return area;
     }
 }
+
+class RectangleV2{
+    constructor(topLeft, width, height){
+        this.topLeft = topLeft;
+        this.width = width;
+        this.height = height;
+        this.topRight = new Point(this.topLeft.x + this.width, this.topLeft.y);
+        this.bottomRight = new Point(this.topRight.x, this.topRight.y - this.height);
+        this.bottomLeft = new Point(this.topLeft.x, this.bottomRight.y);
+    }
+
+    perimeter(){
+        let perimeter;
+        perimeter = MathC.calculateDistance(this.topLeft, this.topRight) +
+                    MathC.calculateDistance(this.topRight, this.bottomRight) +
+                    MathC.calculateDistance(this.bottomRight, this.bottomLeft) +
+                    MathC.calculateDistance(this.bottomLeft, this.topLeft);
+        return perimeter;
+    }
+
+    area(){
+        let area;
+        area = this.width * this.height;
+        return area;
+    }
+}
+
+class RectangleV3{
+    constructor(topLeft, bottomRight){
+        this.topLeft = topLeft;
+        this.bottomRight = bottomRight;
+        this.topRight = new Point(this.bottomRight.x, this.topLeft.y);
+        this.bottomLeft = new Point(this.topLeft.x, this.bottomRight.y);
+    }
+
+    perimeter(){
+        let perimeter;
+        perimeter = MathC.calculateDistance(this.topLeft, this.topRight) +
+                    MathC.calculateDistance(this.topRight, this.bottomRight) +
+                    MathC.calculateDistance(this.bottomRight, this.bottomLeft) +
+                    MathC.calculateDistance(this.bottomLeft, this.topLeft);
+        return perimeter;
+    }
+
+    area(){
+        let area;
+        area = MathC.calculateDistance(this.topLeft, this.topRight) *
+        MathC.calculateDistance(this.topRight, this.bottomRight);
+        return area;
+    }
+}
