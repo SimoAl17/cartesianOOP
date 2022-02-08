@@ -73,3 +73,10 @@ class RectangleV3{
         return area;
     }
 }
+
+class Square extends RectangleV3{
+    constructor(topLeft, side){
+        super(topLeft, new Point(topLeft.x + side, topLeft.y + side));
+        this.side = side;
+    }
+}

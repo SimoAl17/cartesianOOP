@@ -22,3 +22,18 @@ class Triangle{
         return area;
     }
 }
+
+class RightTriangle extends Triangle{
+    constructor(p1, p2, p3){
+        super(p1, p2, p3);
+    }
+
+    calculateHp(){
+        const c1 = p1.distanceFrom(p2);
+        const c2 = p2.distanceFrom(p3);
+
+        const hp = Math.sqrt(Math.pow(c1, 2) + Math.pow(c2, 2));
+        return hp;
+    }
+    
+}

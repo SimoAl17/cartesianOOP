@@ -59,3 +59,12 @@ mappa.set(1, "Pippo");
 mappa.set(2, "Paperino");
 mappa.set(1, "Topolino");               //Sovrascrive la 1 precedente
 console.log(mappa);
+
+//////////////////////////////////////////////////
+
+const range = new Range(0, 20, 2);
+for (const number of range) {
+    console.log(number);
+}
+
+
